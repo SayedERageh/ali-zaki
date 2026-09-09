@@ -1,0 +1,370 @@
+/* =========================================================
+   TABARAK - HOME
+   ========================================================= */
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #061a2b;
+}
+
+.hero-swiper,
+.hero-slide {
+    min-height: 100vh;
+}
+
+.hero-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #061a2b;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 18, 31, .94) 0%,
+            rgba(3, 18, 31, .78) 42%,
+            rgba(3, 18, 31, .28) 100%
+        );
+}
+
+[dir="rtl"] .hero-overlay {
+    background:
+        linear-gradient(
+            270deg,
+            rgba(3, 18, 31, .94) 0%,
+            rgba(3, 18, 31, .78) 42%,
+            rgba(3, 18, 31, .28) 100%
+        );
+}
+
+.hero-slide .container {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-content {
+    width: min(760px, 100%);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.hero-subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 24px;
+
+    color: #61c7f3;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle::before {
+    content: "";
+    display: inline-block;
+
+    width: 42px;
+    height: 2px;
+
+    background: #61c7f3;
+}
+
+.hero-title {
+    margin: 0 0 24px;
+
+    color: #ffffff;
+
+    font-size: clamp(44px, 6vw, 82px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.hero-description {
+    max-width: 680px;
+
+    margin: 0 0 34px;
+
+    color: rgba(255, 255, 255, .78);
+
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+}
+
+.btn-primary-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 54px;
+    padding: 0 28px;
+
+    border: 0;
+    border-radius: 3px;
+
+    background: #55bce8;
+    color: #062039;
+
+    font-weight: 700;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+
+    background: #ffffff;
+    color: #062039;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .2);
+}
+
+.btn-outline-light {
+    min-height: 54px;
+    padding: 14px 28px;
+
+    border-radius: 3px;
+
+    font-weight: 700;
+}
+
+.hero-navigation {
+    position: absolute;
+
+    right: 60px;
+    bottom: 70px;
+
+    z-index: 10;
+
+    display: flex;
+    gap: 10px;
+}
+
+[dir="rtl"] .hero-navigation {
+    right: auto;
+    left: 60px;
+}
+
+.hero-navigation button {
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 2px;
+
+    background: rgba(255, 255, 255, .06);
+    color: #ffffff;
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s ease;
+}
+
+.hero-navigation button:hover {
+    background: #55bce8;
+    border-color: #55bce8;
+    color: #062039;
+}
+
+.hero-pagination {
+    position: absolute !important;
+
+    right: 60px !important;
+    bottom: 35px !important;
+    left: auto !important;
+
+    z-index: 10;
+
+    width: auto !important;
+
+    text-align: right;
+}
+
+[dir="rtl"] .hero-pagination {
+    right: auto !important;
+    left: 60px !important;
+
+    text-align: left;
+}
+
+.hero-pagination .swiper-pagination-bullet {
+    width: 28px;
+    height: 3px;
+
+    margin: 0 4px !important;
+
+    border-radius: 0;
+
+    background: rgba(255, 255, 255, .4);
+
+    opacity: 1;
+}
+
+.hero-pagination .swiper-pagination-bullet-active {
+    background: #55bce8;
+}
+
+.hero-scroll {
+    position: absolute;
+
+    left: 60px;
+    bottom: 45px;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: rgba(255, 255, 255, .65);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    writing-mode: vertical-rl;
+}
+
+[dir="rtl"] .hero-scroll {
+    right: 60px;
+    left: auto;
+}
+
+.hero-scroll i {
+    color: #55bce8;
+    font-size: 18px;
+}
+
+.hero-empty {
+    background:
+        linear-gradient(
+            135deg,
+            #061a2b,
+            #0b314c
+        );
+}
+
+@media (max-width: 991px) {
+
+    .hero-content {
+        padding-top: 130px;
+        padding-bottom: 150px;
+    }
+
+    .hero-title {
+        font-size: clamp(42px, 9vw, 64px);
+    }
+
+    .hero-navigation {
+        right: 30px;
+        bottom: 35px;
+    }
+
+    [dir="rtl"] .hero-navigation {
+        right: auto;
+        left: 30px;
+    }
+
+    .hero-pagination {
+        right: 30px !important;
+        bottom: 15px !important;
+    }
+
+    [dir="rtl"] .hero-pagination {
+        right: auto !important;
+        left: 30px !important;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .hero-section,
+    .hero-swiper,
+    .hero-slide {
+        min-height: 760px;
+    }
+
+    .hero-content {
+        padding-top: 120px;
+        padding-bottom: 100px;
+    }
+
+    .hero-subtitle {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-title {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-navigation {
+        right: 20px;
+        bottom: 25px;
+    }
+
+    [dir="rtl"] .hero-navigation {
+        right: auto;
+        left: 20px;
+    }
+
+    .hero-navigation button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .hero-pagination {
+        right: 20px !important;
+        bottom: 5px !important;
+    }
+
+    [dir="rtl"] .hero-pagination {
+        right: auto !important;
+        left: 20px !important;
+    }
+}
