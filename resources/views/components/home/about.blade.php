@@ -91,7 +91,7 @@
 
 
                     {{-- Floating Card --}}
-                    <div class="about-floating-card">
+                    {{-- <div class="about-floating-card">
 
                         <div class="about-card-icon">
 
@@ -111,7 +111,7 @@
 
                         </div>
 
-                    </div>
+                    </div> --}}
 
 
                     <div class="about-decoration"></div>
@@ -125,25 +125,4 @@
     </div>
 
 </section>
-  <style>
-    
-.about-image-main {
-    position: relative;
-
-    width: 100%;
-    height: 700px;
-
-    overflow: hidden;
-
-    background: var(--tabarak-navy);
-}
-
-.about-image-main img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain !important;
-
-    transition: transform .8s ease;
-}
-  </style>
+  
