@@ -91,7 +91,7 @@
 
 
                     {{-- Floating Card --}}
-                    {{-- <div class="about-floating-card">
+                    <div class="about-floating-card">
 
                         <div class="about-card-icon">
 
@@ -111,7 +111,7 @@
 
                         </div>
 
-                    </div> --}}
+                    </div>
 
 
                     <div class="about-decoration"></div>
@@ -125,4 +125,4 @@
     </div>
 
 </section>
-  
+```
