@@ -1,3 +1,4 @@
+
 @php
     $productsSection = $homeSections->get('products');
 @endphp
@@ -39,7 +40,7 @@
         {{-- Products --}}
         <div class="products-grid">
 
-            @foreach($products->take(6) as $product)
+            @foreach($products as $product)
 
                 @php
 
@@ -174,3 +175,4 @@
     </div>
 
 </section>
+

@@ -2,6 +2,7 @@
 
 @section('content')
 
+    @include('components.home.contact-info')
 
     @include('components.home.cta')
 

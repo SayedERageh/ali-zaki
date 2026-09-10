@@ -600,7 +600,261 @@ html[dir="ltr"] .navbar-actions {
     margin-top: 8px;
 }
 
+/* =========================================================
+   MOBILE RESPONSIVE NAVBAR
+========================================================= */
 
+@media (max-width: 991px) {
+
+    /* Navbar */
+    .navbar-inner {
+        min-height: 78px;
+    }
+
+    /* Hide Desktop Navigation */
+    .navbar-menu {
+        display: none !important;
+    }
+
+    /* Hide Desktop Actions */
+    .navbar-actions {
+        display: none !important;
+    }
+
+    /* Show Mobile Toggle */
+    .mobile-menu-toggle {
+        display: flex !important;
+        flex-shrink: 0;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        z-index: 9999;
+
+        background: rgba(6, 26, 43, .98);
+
+        border-top: 1px solid rgba(255, 255, 255, .08);
+
+        box-shadow: 0 25px 50px rgba(0, 0, 0, .25);
+    }
+
+    .mobile-menu.open,
+    .mobile-menu.active {
+        display: block !important;
+    }
+
+    /* Mobile Menu Links */
+    .mobile-menu-inner > a {
+        display: flex !important;
+
+        align-items: center;
+
+        width: 100%;
+
+        min-height: 52px;
+
+        padding: 0 16px;
+
+        text-decoration: none;
+
+        color: rgba(255, 255, 255, .9) !important;
+    }
+
+    /* Language */
+    .mobile-menu-inner > a.mobile-language {
+        margin-top: 10px;
+
+        min-height: 54px;
+
+        border: 1px solid rgba(255, 255, 255, .1);
+
+        border-radius: 6px;
+
+        background: rgba(255, 255, 255, .05);
+
+        color: #ffffff !important;
+    }
+
+    .mobile-language i:first-child {
+        color: var(--tabarak-blue) !important;
+    }
+
+    .mobile-language-arrow {
+        margin-left: auto;
+
+        color: rgba(255, 255, 255, .5) !important;
+    }
+
+    /* Contact */
+    .mobile-menu-contact {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        margin-top: 16px;
+
+        padding: 12px 0 0;
+
+        border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .mobile-menu-contact a {
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        min-height: 44px;
+
+        padding: 0 16px;
+
+        color: rgba(255, 255, 255, .8);
+
+        text-decoration: none;
+
+        font-size: 13px;
+    }
+
+    .mobile-menu-contact i {
+        color: var(--tabarak-blue);
+
+        font-size: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+/* =========================================================
+   GLOBAL RESPONSIVE FIX
+   Prevent horizontal overflow on mobile
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video,
+iframe,
+svg {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+.container,
+.container-fluid {
+    max-width: 100%;
+}
+
+/* Prevent long text / URLs from breaking layout */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Mobile safety */
+@media (max-width: 991px) {
+
+    html,
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    section,
+    header,
+    footer,
+    main,
+    nav {
+        max-width: 100%;
+    }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    [class*="col-"] {
+        min-width: 0;
+    }
+}
+    .navbar-inner {
+        min-height: 70px;
+    }
+
+    .navbar-brand img {
+        max-width: 150px;
+
+        max-height: 48px;
+    }
+
+    .brand-text strong {
+        font-size: 16px;
+    }
+
+    .brand-text span {
+        font-size: 9px;
+    }
+
+    .mobile-menu-toggle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .mobile-menu {
+        top: 100%;
+    }
+
+    .mobile-menu-inner {
+        padding: 12px 0 22px;
+    }
+
+    .mobile-menu-inner > a {
+        min-height: 50px;
+
+        font-size: 14px;
+    }
+
+}
 /* Mobile contact */
 
 .mobile-menu-contact {

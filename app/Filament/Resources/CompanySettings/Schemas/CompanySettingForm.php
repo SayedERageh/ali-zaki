@@ -54,8 +54,16 @@ class CompanySettingForm
                                             ->imageEditor()
                                             ->imagePreviewHeight('180')
                                             ->openable()
-                                            ->downloadable()
-                                            ->columnSpanFull(),
+                                            ->downloadable(),
+
+                                        FileUpload::make('qr_code')
+                                            ->label('QR Code')
+                                            ->image()
+                                            ->directory('company/qr')
+                                            ->disk('public')
+                                            ->imagePreviewHeight('180')
+                                            ->openable()
+                                            ->downloadable(),
 
                                     ])
                                     ->columns(2),
@@ -73,7 +81,7 @@ class CompanySettingForm
                             ->schema([
 
                                 Section::make('Contact Information')
-                                    ->description('Company contact information.')
+                                    ->description('Company contact information and social media.')
                                     ->schema([
 
                                         TextInput::make('email')
@@ -82,18 +90,67 @@ class CompanySettingForm
                                             ->email()
                                             ->maxLength(255),
 
+                                        TextInput::make('website_name')
+                                            ->label('Website Name')
+                                            ->placeholder('Tabarak Scaffold Services')
+                                            ->maxLength(255),
+
                                         TextInput::make('phone')
-                                            ->label('Phone')
+                                            ->label('Main Phone')
                                             ->placeholder('+20 XXX XXX XXXX')
-                                          ,
+                                            ->tel()
+                                            ->maxLength(50),
 
                                         TextInput::make('whatsapp')
                                             ->label('WhatsApp')
                                             ->placeholder('+20 XXX XXX XXXX')
-                                           ,
+                                            ->tel()
+                                            ->maxLength(50),
+
+                                        TextInput::make('phone_1')
+                                            ->label('Phone 1')
+                                            ->placeholder('+966 XXX XXX XXXX')
+                                            ->tel()
+                                            ->maxLength(50),
+
+                                        TextInput::make('phone_2')
+                                            ->label('Phone 2')
+                                            ->placeholder('+966 XXX XXX XXXX')
+                                            ->tel()
+                                            ->maxLength(50),
+
+                                        TextInput::make('phone_3')
+                                            ->label('Phone 3')
+                                            ->placeholder('+966 XXX XXX XXXX')
+                                            ->tel()
+                                            ->maxLength(50),
+
+                                        TextInput::make('phone_4')
+                                            ->label('Phone 4')
+                                            ->placeholder('+966 XXX XXX XXXX')
+                                            ->tel()
+                                            ->maxLength(50),
+
+                                        TextInput::make('facebook')
+                                            ->label('Facebook')
+                                            ->placeholder('https://facebook.com/...')
+                                            ->url()
+                                            ->maxLength(500),
+
+                                        TextInput::make('instagram')
+                                            ->label('Instagram')
+                                            ->placeholder('https://instagram.com/...')
+                                            ->url()
+                                            ->maxLength(500),
+
+                                        TextInput::make('tiktok')
+                                            ->label('TikTok')
+                                            ->placeholder('https://tiktok.com/@...')
+                                            ->url()
+                                            ->maxLength(500),
 
                                     ])
-                                    ->columns(3),
+                                    ->columns(2),
 
                             ]),
 

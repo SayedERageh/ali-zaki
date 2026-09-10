@@ -29,6 +29,12 @@
 
                 </a>
 
+                @if($company->website_name)
+                    <span class="footer-website-name">
+                        {{ $company->website_name }}
+                    </span>
+                @endif
+
                 <p>
                     {{ app()->getLocale() === 'ar'
                         ? 'حلول صناعية موثوقة مصممة للقطاعات الصناعية والطاقة والنفط والغاز.'
@@ -63,6 +69,10 @@
                     {{ app()->getLocale() === 'ar' ? 'مشاريعنا' : 'Projects' }}
                 </a>
 
+                <a href="{{ route('contact') }}">
+                    {{ app()->getLocale() === 'ar' ? 'تواصل معنا' : 'Contact Us' }}
+                </a>
+
             </div>
 
 
@@ -95,36 +105,113 @@
                         : 'CONTACT US' }}
                 </h4>
 
+
+                {{-- Main Phone --}}
                 @if($company->phone)
 
-                    <a href="tel:{{ $company->phone }}">
+                    <a
+                        href="tel:{{ preg_replace('/[^0-9+]/', '', $company->phone) }}"
+                    >
                         <i class="bi bi-telephone"></i>
-                        {{ $company->phone }}
+                        <span dir="ltr">
+                            {{ $company->phone }}
+                        </span>
                     </a>
 
                 @endif
 
+
+                {{-- Phone 1 --}}
+                @if($company->phone_1)
+
+                    <a
+                        href="tel:{{ preg_replace('/[^0-9+]/', '', $company->phone_1) }}"
+                    >
+                        <i class="bi bi-telephone-forward"></i>
+                        <span dir="ltr">
+                            {{ $company->phone_1 }}
+                        </span>
+                    </a>
+
+                @endif
+
+
+                {{-- Phone 2 --}}
+                @if($company->phone_2)
+
+                    <a
+                        href="tel:{{ preg_replace('/[^0-9+]/', '', $company->phone_2) }}"
+                    >
+                        <i class="bi bi-telephone-forward"></i>
+                        <span dir="ltr">
+                            {{ $company->phone_2 }}
+                        </span>
+                    </a>
+
+                @endif
+
+
+                {{-- Phone 3 --}}
+                @if($company->phone_3)
+
+                    <a
+                        href="tel:{{ preg_replace('/[^0-9+]/', '', $company->phone_3) }}"
+                    >
+                        <i class="bi bi-telephone-forward"></i>
+                        <span dir="ltr">
+                            {{ $company->phone_3 }}
+                        </span>
+                    </a>
+
+                @endif
+
+
+                {{-- Phone 4 --}}
+                @if($company->phone_4)
+
+                    <a
+                        href="tel:{{ preg_replace('/[^0-9+]/', '', $company->phone_4) }}"
+                    >
+                        <i class="bi bi-telephone-forward"></i>
+                        <span dir="ltr">
+                            {{ $company->phone_4 }}
+                        </span>
+                    </a>
+
+                @endif
+
+
+                {{-- Email --}}
                 @if($company->email)
 
                     <a href="mailto:{{ $company->email }}">
                         <i class="bi bi-envelope"></i>
-                        {{ $company->email }}
+                        <span>
+                            {{ $company->email }}
+                        </span>
                     </a>
 
                 @endif
 
+
+                {{-- WhatsApp --}}
                 @if($company->whatsapp)
 
                     <a
                         href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $company->whatsapp) }}"
                         target="_blank"
+                        rel="noopener"
                     >
                         <i class="bi bi-whatsapp"></i>
-                        WhatsApp
+                        <span>
+                            WhatsApp
+                        </span>
                     </a>
 
                 @endif
 
+
+                {{-- Address --}}
                 @if($company->address)
 
                     <div class="footer-address">
@@ -134,6 +221,59 @@
                         <span>
                             {{ $company->address }}
                         </span>
+
+                    </div>
+
+                @endif
+
+
+                {{-- Social Media --}}
+                @if(
+                    $company->facebook ||
+                    $company->instagram ||
+                    $company->tiktok
+                )
+
+                    <div class="footer-social">
+
+                        @if($company->facebook)
+
+                            <a
+                                href="{{ $company->facebook }}"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Facebook"
+                            >
+                                <i class="bi bi-facebook"></i>
+                            </a>
+
+                        @endif
+
+                        @if($company->instagram)
+
+                            <a
+                                href="{{ $company->instagram }}"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Instagram"
+                            >
+                                <i class="bi bi-instagram"></i>
+                            </a>
+
+                        @endif
+
+                        @if($company->tiktok)
+
+                            <a
+                                href="{{ $company->tiktok }}"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="TikTok"
+                            >
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+
+                        @endif
 
                     </div>
 

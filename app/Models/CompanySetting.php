@@ -11,10 +11,22 @@ class CompanySetting extends Model
         'company_name_en',
 
         'email',
+        'website_name',
+
         'phone',
         'whatsapp',
 
+        'phone_1',
+        'phone_2',
+        'phone_3',
+        'phone_4',
+
+        'facebook',
+        'instagram',
+        'tiktok',
+
         'logo',
+        'qr_code',
 
         'about_ar',
         'about_en',
