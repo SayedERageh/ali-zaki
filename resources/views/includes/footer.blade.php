@@ -35,11 +35,7 @@
                     </span>
                 @endif
 
-                <p>
-                    {{ app()->getLocale() === 'ar'
-                        ? 'حلول صناعية موثوقة مصممة للقطاعات الصناعية والطاقة والنفط والغاز.'
-                        : 'Reliable industrial solutions for Oil & Gas, Power, Energy and Industrial sectors.' }}
-                </p>
+            
 
             </div>
 
@@ -210,21 +206,20 @@
 
                 @endif
 
+{{-- Address --}}
+@if($company->address)
 
-                {{-- Address --}}
-                @if($company->address)
+    <div class="footer-address">
 
-                    <div class="footer-address">
+        <i class="bi bi-geo-alt"></i>
 
-                        <i class="bi bi-geo-alt"></i>
+        <span>
+            {{ strip_tags($company->address) }}
+        </span>
 
-                        <span>
-                            {{ $company->address }}
-                        </span>
+    </div>
 
-                    </div>
-
-                @endif
+@endif
 
 
                 {{-- Social Media --}}

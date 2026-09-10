@@ -102,11 +102,11 @@
                         <div>
 
                             <strong>
-                                HSE FIRST
+                                {{ $company->company_name }}
                             </strong>
 
                             <span>
-                                Safety & Quality
+                                {{ $company->phone }}
                             </span>
 
                         </div>
