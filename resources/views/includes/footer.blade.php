@@ -214,13 +214,12 @@
         <i class="bi bi-geo-alt"></i>
 
         <span>
-            {{ strip_tags($company->address) }}
+            {!! nl2br(e(trim(html_entity_decode(strip_tags($company->address))))) !!}
         </span>
 
     </div>
 
 @endif
-
 
                 {{-- Social Media --}}
                 @if(
