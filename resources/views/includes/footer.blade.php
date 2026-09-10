@@ -209,12 +209,27 @@
 {{-- Address --}}
 @if($company->address)
 
+    @php
+        $address = $company->address;
+
+        // تحويل فواصل الفقرات والأسطر إلى أسطر جديدة
+        $address = preg_replace('/<\/p>\s*<p>/i', "\n", $address);
+        $address = preg_replace('/<br\s*\/?>/i', "\n", $address);
+        $address = preg_replace('/<\/div>\s*<div>/i', "\n", $address);
+
+        // إزالة باقي الـ HTML
+        $address = strip_tags($address);
+
+        // تنظيف المسافات الزائدة
+        $address = trim($address);
+    @endphp
+
     <div class="footer-address">
 
         <i class="bi bi-geo-alt"></i>
 
         <span>
-            {!! nl2br(e(trim(html_entity_decode(strip_tags($company->address))))) !!}
+            {!! nl2br(e($address)) !!}
         </span>
 
     </div>
